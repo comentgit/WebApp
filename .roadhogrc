@@ -1,0 +1,7 @@
+{
+    "production": {
+      "extraBabelPlugins": [
+        "transform-runtime"
+      ]
+    }
+}

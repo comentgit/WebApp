@@ -14,16 +14,24 @@ module.exports = {
     },
 
     module: {
-        loaders: [{
+        loaders: [
+            {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 loader: 'babel'
             },
+            // {
+            //     test: /\.less$/, //正则匹配拓展名为···的文件
+            //     include: path.join(__dirname, './css'), //需要被加载文件的路径
+            //     loader: 'style-loader!css-loader!less-loader'
+            // }
             {
-                test: /\.less$/, //正则匹配拓展名为···的文件
-                include: path.join(__dirname, './css'), //需要被加载文件的路径
+                test: /\.less$/,
                 loader: 'style-loader!css-loader!less-loader'
-            }
+            }, {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader'
+            },
         ]
     },
 
